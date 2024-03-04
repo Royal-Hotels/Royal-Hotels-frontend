@@ -1,0 +1,75 @@
+/* Start Global Rules */
+/* * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+} */
+
+:root {
+  --main-color: #003580;
+  --color-1: #009fe3;
+  --color-2: #feba02;
+  --color-3: #666;
+  --color-4: #f2f6fa;
+  --color-5: #e61e43;
+  /* Other */
+  --main-padding: 15px;
+  /* other colors */
+  --paragraph-font-color: #777;
+  --sectoin-background: #ececec;
+  --section-padding: 100px;
+  --main-transition: 0.3s;
+}
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+/* body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+} */
+
+.header {
+  padding: var(--main-padding);
+  /* color: white; */
+  background-color: var(--main-color);
+}
+.header a,
+.header {
+  color: white;
+}
+.header .container .rowOne i {
+  margin-left: 15px;
+}
+/* rowOne in Header */
+
+.header .container .rowOne {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header .container .rowOne a.logo {
+  font-weight: bold;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.header .container .rowOne div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header .container .rowOne div a {
+  padding: 10px 15px;
+  background-color: var(--color-4);
+  color: var(--color-1);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+}

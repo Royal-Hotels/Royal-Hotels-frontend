@@ -1,0 +1,29 @@
+.welcome-page {
+  background-image: url(./assets/pic.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+  position: relative;
+}
+
+.welcome-page::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.welcome-page::after {
+  content: "Welcome To Our Royal Hotel!";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: white;
+  font-weight: 900;
+}
