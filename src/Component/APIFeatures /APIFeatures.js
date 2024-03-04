@@ -1,6 +1,7 @@
+
 import React from 'react';
 
-const APIFeatures = () => {
+function APIFeatures(){
   return (
     <div className="container d-flex align-items-center justify-content-center vh-100">
       <div className="card position-relative" style={{ width: '900px', height: '350px' }}>
@@ -11,7 +12,7 @@ const APIFeatures = () => {
           </h5>
         </div>
         <img
-          src="money.jpeg"
+        //   src="money.jpeg"
           alt="Card image"
           className="card-img"
           style={{
