@@ -1,0 +1,109 @@
+.secTwo {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.secTwo .container {
+  padding: 50px;
+  border-radius: 30px;
+  position: relative;
+}
+
+.secTwo .container::after,
+.secTwo .container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 20px solid;
+}
+
+.secTwo .container::after {
+  right: 0;
+  border-color: transparent transparent transparent #222;
+}
+
+.secTwo .container::before {
+  left: 0;
+  border-color: transparent #222 transparent transparent;
+}
+
+.secTwo .container .contents {
+  max-width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.secTwo .container .contents div img {
+  width: 100%;
+}
+
+.secTwo .container .contents div {
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  display: inline-block;
+  background-color: #eee;
+  /* background-color: #f8f8f8; */
+  width: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  white-space: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.secTwo .container .contents div::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: var(--main-transition);
+}
+
+.secTwo .container .contents div:hover::before {
+  animation: flashing 0.7s;
+}
+
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}
+
+.secTwo .container .contents div:hover {
+  transform: translateY(-10px);
+}
+
+.secTwo .container .contents div:not(:last-child) {
+  margin-right: 20px;
+}
+
+.secTwo .container .contents div p {
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+.secTwo .container .contents div h2 {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.secTwo .container .contents div h2,
+.secTwo .container .contents div p {
+  padding-left: 25px;
+  padding-right: 25px;
+}

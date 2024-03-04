@@ -1,0 +1,147 @@
+.admin .container .button {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.admin .container .button button {
+  width: 230px;
+  border: none;
+  padding: 15px 20px;
+  background-color: #222;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.admin .container .button button:hover {
+  color: #feba02;
+}
+
+/* ---------------------- */
+
+.roomForm,
+.branchForm {
+  margin-top: 100px;
+}
+
+.roomForm form,
+.branchForm form {
+  width: fit-content;
+  margin: auto;
+}
+
+.roomForm form div:not(:last-child),
+.branchForm form div:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.roomForm form div:not(:last-child),
+.branchForm form div:not(:last-child) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.roomForm form div:first-child select {
+  padding-left: 15px;
+  width: 250px;
+  height: 50px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #003580;
+}
+
+.roomForm form div:not(:last-child) input,
+.branchForm form div:not(:last-child) input {
+  border-radius: 5px;
+  width: 250px;
+  height: 50px;
+  padding-left: 15px;
+  background-color: #eee;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid #003580;
+  transition: 0.3s;
+}
+
+.roomForm form div:not(:last-child) input:focus,
+.branchForm form div:not(:last-child) input:focus {
+  border-color: #009fe3;
+}
+
+.roomForm form div:not(:last-child) input::placeholder,
+.branchForm form div:not(:last-child) input::placeholder {
+  color: #666;
+  transition: 0.3s;
+}
+
+.roomForm form div:not(:last-child) input:focus::placeholder,
+.branchForm form div:not(:last-child) input:focus::placeholder {
+  color: transparent;
+}
+
+.roomForm form div:last-child,
+.branchForm form div:last-child {
+  text-align: center;
+}
+
+.roomForm form div:last-child input,
+.branchForm form div:last-child input {
+  border: none;
+  background-color: #feba02;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.roomForm form div:last-child input:hover,
+.branchForm form div:last-child input:hover {
+  background-color: #af8100;
+}
+
+.roomForm form div label,
+.branchForm form div label {
+  margin-right: 30px;
+}
+
+@media (max-width: 767px) {
+  .roomForm form div label,
+  .branchForm form div label {
+    display: none;
+  }
+}
+
+/* --------------------------- */
+.activeR {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 50px;
+}
+
+.activeR div {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #eee;
+}
+
+.activeR div p {
+  font-size: 18px;
+  color: #aaaaaa;
+  font-weight: bold;
+}
+
+.activeR div p span {
+  font-weight: bold;
+  color: #001f3f;
+  display: inline-block;
+  margin-right: 15px;
+  width: 135px;
+}
