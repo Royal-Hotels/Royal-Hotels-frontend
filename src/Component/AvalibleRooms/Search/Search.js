@@ -1,6 +1,6 @@
 import "./Search.css";
 import { useEffect, useState } from "react";
-import AvalibleRooms from "./AvalibleRooms";
+import AvalibleRooms from "../AvalibleRooms";
 
 function Search() {
   //----- getAllBranches

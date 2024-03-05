@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
@@ -42,6 +42,10 @@ function Login() {
         }
     };
 
+    const isFormValid = () => {
+        return username.trim() !== "" && password.trim() !== "";
+    };
+
     return (
         <>
             <h1>Login Page</h1>
@@ -69,7 +73,11 @@ function Login() {
 
                 <br />
 
-                <button type="button" onClick={handleLogin} disabled={isLoading}>
+                <button
+                    type="button"
+                    onClick={handleLogin}
+                    disabled={!isFormValid() || isLoading}
+                >
                     {isLoading ? "Logging in..." : "Log in"}
                 </button>
 
@@ -80,7 +88,7 @@ function Login() {
                 )}
 
                 <p>
-                    Don't have an account? <a href="#">Register</a>
+                    Don't have an account?<Link to="/registration">Register</Link> 
                 </p>
             </form>
         </>
