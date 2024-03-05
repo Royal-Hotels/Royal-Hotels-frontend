@@ -4,6 +4,7 @@ import SectionB from "./SectionB/SectionB";
 import Service from "./Service/Service";
 import SectionA from "./SectionA/SectionA";
 import APIFeatures from "./APIFeatures/APIFeatures";
+import Branches from "./Branches/Branches";
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <Welcome />
       <SectionA />
       <SectionB />
+      <Branches/>
       <APIFeatures/>
       <Service />
     </>
