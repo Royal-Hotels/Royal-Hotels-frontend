@@ -12,7 +12,7 @@ function Footer() {
               <i className="fab fa-facebook-f facebook"></i>
             </Link>
             <Link to="https://twitter.com/" target="_blank">
-              <i className="fab fa-twitter twitter"></i>
+              <i class="fa-brands fa-x-twitter twitter"></i>
             </Link>
             <Link to="https://www.youtube.com/" target="_blank">
               <i className="fab fa-youtube youtube"></i>

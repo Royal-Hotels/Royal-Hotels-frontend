@@ -15,7 +15,7 @@ function Navbar() {
       </li>
       <li>
         <Link to="#">
-          <i className="fa-solid fa-people-roof"></i>Rooms
+          <i className="fa-solid fa-bed"></i>Rooms
         </Link>
       </li>
       <li>
@@ -24,8 +24,7 @@ function Navbar() {
         </Link>
       </li>
       <li>
-        <Link to="#">
-          {" "}
+        <Link to="/about">
           <i className="fa-solid fa-info"></i>About
         </Link>
       </li>

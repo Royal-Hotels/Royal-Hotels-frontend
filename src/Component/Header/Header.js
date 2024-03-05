@@ -1,6 +1,6 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "./Navbar/Navbar";
 function Header() {
   return (
     <div className="header">

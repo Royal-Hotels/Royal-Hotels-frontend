@@ -1,0 +1,138 @@
+.team-members {
+  text-align: center;
+  padding: var(--section-padding) 0;
+}
+
+.team-members h1:first-child {
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.team-members .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  column-gap: 30px;
+  row-gap: 50px;
+}
+
+@media (max-width: 1199px) {
+  .team-members .container {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    column-gap: 0px;
+  }
+}
+
+@media (max-width: 991px) {
+  .team-members .container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    column-gap: 50px;
+  }
+}
+
+.team-members .container .box {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  padding-right: 70px;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  max-width: 370px;
+  margin: auto;
+}
+
+.team-members .container .box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 290px;
+  z-index: -1;
+  border-radius: 15px;
+  background-color: #f3f3f3;
+  /* #f3f3f3 */
+}
+
+.team-members .container .box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  background-color: #e4e4e4;
+  border-radius: 15px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  /* background-color: rgb(223, 223, 223); */
+  /* background-color: #14171a; */
+  transition: var(--main-transition);
+}
+
+.team-members .container .box:hover::after {
+  width: 290px;
+}
+
+.team-members .container .box img {
+  max-width: 100%;
+  border-radius: 15px;
+  transition: var(--main-transition) filter;
+}
+
+.team-members .container .box:hover img {
+  filter: grayscale(1);
+}
+
+.team-members .container .box .icons {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 33px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: calc(35px - 20.25px / 2);
+}
+
+.team-members .container .box .icons a i {
+  color: #666;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.team-members .container .box .icons a:hover i {
+  color: #feba02;
+  text-shadow: 1px 1px 3px rgba(254, 186, 2, 0.8);
+}
+
+.team-members .container .box .info {
+  position: absolute;
+  bottom: 0;
+  right: calc(108.67px - 140px);
+  width: 300px;
+}
+
+.team-members .container .box .info h3 {
+  /* color: var(--main-color); */
+  text-align: left;
+  font-size: 25px;
+  margin: 20px 0 0;
+  font-size: 20px;
+  color: #009fe3;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.team-members .container .box .info p {
+  text-align: left;
+  margin: 10px 0 25px;
+  color: black;
+  transition: 0.3s;
+}
+
+.team-members .container .box:hover .info h3,
+.team-members .container .box:hover .info p {
+  color: #666;
+}

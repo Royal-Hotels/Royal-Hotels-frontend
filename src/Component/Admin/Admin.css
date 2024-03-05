@@ -102,7 +102,8 @@
 
 .roomForm form div:last-child input:hover,
 .branchForm form div:last-child input:hover {
-  background-color: #af8100;
+  background-color: #d18700;
+  color: white;
 }
 
 .roomForm form div label,
@@ -134,7 +135,7 @@
 
 .activeR div p {
   font-size: 18px;
-  color: #aaaaaa;
+  color: #333333;
   font-weight: bold;
 }
 

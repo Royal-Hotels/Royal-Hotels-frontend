@@ -1,6 +1,4 @@
 import "./HotelDesc.css"
-
-
 function HotelDesc(){
   return (
     <>
@@ -14,4 +12,5 @@ function HotelDesc(){
   )
 }
 
-export default HotelDesc
+export default HotelDesc;
+
