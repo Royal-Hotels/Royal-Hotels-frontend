@@ -1,0 +1,20 @@
+.about--container{
+  color: #333533;
+  margin: 40px;
+  font-size: 18px;
+ 
+  border: 1px solid gold;
+  background-color: #f9dc5c;
+  border-radius: 10px;
+}
+.Logo{
+  width: fit-content;
+  margin: auto;
+}
+
+.About--Section{
+  text-align: center;
+  width: fit-content;
+  padding: 50px;
+  line-height: 28px;
+}

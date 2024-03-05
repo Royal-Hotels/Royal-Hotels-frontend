@@ -1,0 +1,60 @@
+.our-branches {
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+.our-branches h1 {
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.our-branches .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.our-branches .container .hotelCard {
+  background-color: #fcefb4;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px rgb(189, 183, 183);
+  transition: 0.3s;
+}
+
+.our-branches .container .hotelCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 10px 10px 10px rgb(189, 183, 183);
+}
+
+.our-branches .container .hotelCard img {
+  width: 100%;
+  /* object-fit: cover; */
+}
+.our-branches .container .hotelCard .info {
+  padding: 25px;
+  text-align: left;
+}
+
+.our-branches .container .hotelCard .info p.price {
+  margin-bottom: 0;
+}
+
+.our-branches .container .hotelCard .info .first--line span {
+  margin-left: 10px;
+}
+
+.our-branches .container .hotelCard .info .fa-star {
+  color: gold;
+}
+
+.our-branches .container .hotelCard .info .bold {
+  font-weight: bold;
+}
+.our-branches .container .hotelCard .info .light {
+  color: gray;
+}
