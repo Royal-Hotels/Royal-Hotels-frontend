@@ -1,0 +1,41 @@
+.room-container{
+  
+  gap: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 50px;
+  
+
+}
+.room--card{
+  position: relative;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgb(199, 198, 193);
+  border-radius: 10px;
+}
+
+.room-img{
+  width: 100%;
+}
+.badge{
+  position: absolute;
+  top:0;
+  left:0;
+  background-color: aqua;
+  padding: 3px;
+  border-bottom-right-radius: 5px;
+}
+
+.info--section{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  row-gap: 5px;
+}
+.bold{
+  font-weight: bold;
+}
