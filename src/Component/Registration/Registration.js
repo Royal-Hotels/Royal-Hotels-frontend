@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -35,7 +35,7 @@ const Registration = () => {
 
     try {
       // Make a POST request to your server endpoint
-      const response = await axios.post('http://localhost:3000/user', {
+      const response = await axios.post('https://movies-app-vkjw.onrender.com/user', {
         username: formData.username,
         phone: formData.phone,
         email: formData.email,
@@ -54,13 +54,7 @@ const Registration = () => {
     }
   };
 
-  // useEffect to handle the redirection after registration success
-  useEffect(() => {
-    if (registrationSuccess) {
-      // Redirect to the Logein component or any other route
-      window.location.href = '/logein'; // Update with the correct path
-    }
-  }, [registrationSuccess]);
+  
 
   return (
     <div>
@@ -104,7 +98,7 @@ const Registration = () => {
    {registrationSuccess && (
         <p>
           Registration successful!{' '}
-          <Link to="/logein">Click here to log in</Link>
+          <Link to="/login">Click here to log in</Link>
         </p>
       )}
     </div>
