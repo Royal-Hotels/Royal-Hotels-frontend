@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loginStatus, setLoginStatus] = useState({ success: null, message: "" });
     const [isLoading, setLoading] = useState(false);
@@ -12,22 +12,24 @@ function Login() {
     const handleLogin = async () => {
         try {
             setLoading(true);
-            const response = await fetch("http://localhost:3000/login", {
+            const response = await fetch("https://movies-app-vkjw.onrender.com/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify({ email, password }),
             });
 
             if (response.ok) {
                 const jsonData = await response.json();
                 setLoginStatus({ success: true, message: "Login successful" });
 
-                if (jsonData.userId) {
-                    navigate(`/user-reservation/${jsonData.userId}`);
+                if (jsonData.is_admin) {
+                    navigate("/admin-page");
+                } else if (jsonData.user_id) {
+                    navigate(`/res/${jsonData.user_id}`);
                 } else {
-                    console.error("User ID is missing in the server response.");
+                    console.error("User ID is missing in the server response.");;
                 }
             } else {
                 const errorData = await response.json();
@@ -43,7 +45,7 @@ function Login() {
     };
 
     const isFormValid = () => {
-        return username.trim() !== "" && password.trim() !== "";
+        return email.trim() !== "" && password.trim() !== "";
     };
 
     return (
@@ -51,12 +53,12 @@ function Login() {
             <h1>Login Page</h1>
             <form className="login-form">
                 <label>
-                    UserName:
+                    Email:
                     <input
                         type="text"
-                        placeholder="Username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </label>

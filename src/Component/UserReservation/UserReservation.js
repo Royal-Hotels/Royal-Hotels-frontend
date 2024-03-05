@@ -10,12 +10,12 @@ function UserReservation() {
     const [deletingReservationId, setDeletingReservationId] = useState(null);
 
 
-    const { userId } = useParams();
+    const { user_id } = useParams();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/users/${userId}`);
+                const response = await fetch(`https://movies-app-vkjw.onrender.com/usersRes/${user_id}`);
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -29,7 +29,7 @@ function UserReservation() {
         };
 
         fetchData();
-    }, [userId]);
+    }, [user_id]);
 
     const handleEditClick = (reservation) => {
         setEditingReservation(reservation);
@@ -37,16 +37,19 @@ function UserReservation() {
 
     const handleSaveEdit = async (newCheckInDate, newCheckOutDate) => {
         try {
+            const requestBody = {
+                check_in_date: newCheckInDate,
+                check_out_date: newCheckOutDate,
+            };
 
-            const response = await fetch(`http://localhost:3000/reservations/${editingReservation.reservation_id}`, {
+            console.log('Request Payload:', JSON.stringify(requestBody));
+
+            const response = await fetch(`https://movies-app-vkjw.onrender.com/usersRes/${editingReservation.reservation_id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({
-                    check_in_date: newCheckInDate,
-                    check_out_date: newCheckOutDate,
-                }),
+                body: JSON.stringify(requestBody),
             });
 
             if (!response.ok) {
@@ -56,8 +59,8 @@ function UserReservation() {
             const updatedReservation = await response.json();
             setReservations((prevReservations) =>
                 prevReservations.map((reservation) =>
-                    reservation.reservation_id === updatedReservation.reservation[0].reservation_id
-                        ? updatedReservation.reservation[0]
+                    reservation.reservation_id === updatedReservation?.reservation?.reservation_id
+                        ? updatedReservation?.reservation
                         : reservation
                 )
             );
@@ -67,6 +70,7 @@ function UserReservation() {
             console.error("Error updating reservation:", error);
         }
     };
+
 
     const handleDeleteClick = (reservationId) => {
         setDeletingReservationId(reservationId);
@@ -89,7 +93,7 @@ function UserReservation() {
     const handleDelete = async (reservationId) => {
         try {
             const response = await fetch(
-                `http://localhost:3000/reservations/${userId}/${reservationId}`,
+                `https://movies-app-vkjw.onrender.com/usersRes/${user_id}/${reservationId}`,
                 {
                     method: "DELETE",
                 }
@@ -113,7 +117,7 @@ function UserReservation() {
 
     return (
         <>
-            <h1>Reservation for User {userId}</h1>
+            <h1>Reservation for User {user_id}</h1>
             <table className="reservation-table">
                 <thead>
                     <tr>
@@ -155,6 +159,7 @@ function UserReservation() {
                         <input
                             type="date"
                             value={editingReservation.check_in_date.split("T")[0]}
+                            min={new Date().toISOString().split("T")[0]}
                             onChange={(e) =>
                                 setEditingReservation((prevReservation) => ({
                                     ...prevReservation,
@@ -168,6 +173,7 @@ function UserReservation() {
                         <input
                             type="date"
                             value={editingReservation.check_out_date.split("T")[0]}
+                            min={new Date().toISOString().split("T")[0]}
                             onChange={(e) =>
                                 setEditingReservation((prevReservation) => ({
                                     ...prevReservation,
@@ -189,6 +195,8 @@ function UserReservation() {
                     <button onClick={() => setEditingReservation(null)}>Cancel</button>
                 </div>
             )}
+
+
 
             {showConfirmation && (
                 <div className="confirmation-modal">
