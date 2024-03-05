@@ -1,0 +1,47 @@
+.Team--Container{
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  row-gap: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.Team--memeber--card{
+  background-color: black;
+
+  border-radius: 10px;
+  width: 50%;
+  /* margin: auto; */
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0 0 5px rgb(223, 217, 217);
+}
+.Team--memeber--card:hover{
+  box-shadow: 0 0 5px rgb(131, 104, 104);
+}
+.Team--memeber--card:nth-child(even){
+  margin-left: auto;
+  
+}
+
+.personal--photo{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+
+}
+
+.basic--info{
+  text-align: center;
+  line-height: 30px;
+}
+
+.fa-github{
+  font-size: 30px;
+  color: rgb(186, 186, 212);
+}
