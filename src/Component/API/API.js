@@ -3,7 +3,6 @@ import axios from "axios";
 
 function UserConverter() {
   const [result, setResult] = useState("");
-  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,7 +56,6 @@ function UserConverter() {
         </div>
         <button type="submit">Convert</button>
       </form>
-      {error && <p>{error}</p>}
       {result && <p>Result: {result}</p>}
     </div>
   );
