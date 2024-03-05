@@ -6,11 +6,16 @@ function NewBranch() {
     e.preventDefault();
     const branch_name = e.target.Bname.value;
     const location = e.target.Blocation.value;
+    const image_url = e.target.image_url.value;
     try {
-      const response = await axios.post(`http://localhost:3000/branches`, {
-        branch_name,
-        location,
-      });
+      const response = await axios.post(
+        `https://movies-app-vkjw.onrender.com/adminNewBranch`,
+        {
+          branch_name,
+          location,
+          image_url,
+        }
+      );
       console.log(response.data);
     } catch (error) {
       console.error("Error posting data:", error);
@@ -36,6 +41,15 @@ function NewBranch() {
             type="text"
             id="Blocation"
             name="Blocation"
+          ></input>
+        </div>
+        <div>
+          <label htmlFor="image_url">Branch Image</label>
+          <input
+            placeholder="Enter Branch Image"
+            type="text"
+            id="image_url"
+            name="image_url"
           ></input>
         </div>
         <div>
