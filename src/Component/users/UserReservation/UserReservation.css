@@ -1,0 +1,87 @@
+/* styles.css */
+
+/* Table Styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th,
+table td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Edit Reservation Modal Styles */
+.edit-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Buttons Styles */
+button {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Form Input Styles */
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* Header Styles */
+h1 {
+    margin-bottom: 20px;
+}
+
+.delete-button {
+    background-color: #ff6347; /* Use your desired color */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px; /* Adjust spacing as needed */
+  }
+  
+  .delete-button:hover {
+    background-color: #d34832; /* Adjust hover color as needed */
+  }
+
+
+.confirmation-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+  z-index: 1000;
+}
+
+.confirmation-modal button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.confirmation-modal button.no {
+  background-color: #ff4d4d; /* Red background color */
+  color: #fff; /* White text color */
+  border: none;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
@@ -6,11 +7,12 @@ function Login() {
     const [password, setPassword] = useState("");
     const [loginStatus, setLoginStatus] = useState({ success: null, message: "" });
     const [isLoading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
         try {
             setLoading(true);
-            const response = await fetch("http://localhost:3018/login", {
+            const response = await fetch("http://localhost:3000/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -21,7 +23,12 @@ function Login() {
             if (response.ok) {
                 const jsonData = await response.json();
                 setLoginStatus({ success: true, message: "Login successful" });
-                console.log("Login successful", jsonData);
+
+                if (jsonData.userId) {
+                    navigate(`/user-reservation/${jsonData.userId}`);
+                } else {
+                    console.error("User ID is missing in the server response.");
+                }
             } else {
                 const errorData = await response.json();
                 setLoginStatus({ success: false, message: errorData.message });
@@ -44,6 +51,7 @@ function Login() {
                     <input
                         type="text"
                         placeholder="Username"
+                        value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
                     />
@@ -53,6 +61,7 @@ function Login() {
                     <input
                         type="password"
                         placeholder="Password"
+                        value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
