@@ -18,15 +18,22 @@
       "name": "Mohamed Yaman Katalan",
       "Photo": "",
       "Education": "Software Engineer",
-      "Interests": "Media Translation - Video Games ",
-      "gitHubLink": "https://github.com/balqeesHmoud"
+      "Interests": "Media Translation - Video Games",
+      "gitHubLink": "https://github.com/Yaman-Katalan"
     },
     {
       "name": "Anas Moh Knbar",
       "Photo": "",
       "Education": "Software Engineer",
-      "Interests": "Database Design - React.js  ",
+      "Interests": "Database Design - React.js",
       "gitHubLink": "https://github.com/Yaman-Katalan"
+    },
+    {
+      "name": "Balqees Hmoud",
+      "Photo": "",
+      "Education": "Software Engineer",
+      "Interests": "Database Design - React.js",
+      "gitHubLink": "https://github.com/balqeesHmoud"
     }
   ]
 }

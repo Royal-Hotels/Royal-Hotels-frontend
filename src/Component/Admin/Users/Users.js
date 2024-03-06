@@ -3,13 +3,13 @@ import axios from "axios";
 function Users() {
   const [data, setData] = useState([]);
 
-  const isAdmin = (boolean) =>{
-    if(boolean){
-        return "Yes"
-    }else{
-        return "No"
+  const isAdmin = (boolean) => {
+    if (boolean) {
+      return "Yes";
+    } else {
+      return "No";
     }
-  }
+  };
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -25,19 +25,34 @@ function Users() {
     fetchData();
   }, []);
   return (
-    <>
+    <div className="allUsers">
       {data.map((ele) => {
         return (
           <div key={ele.user_id}>
-            <p>User ID : {ele.user_id}</p>
-            <p>User Name : {ele.username}</p>
-            <p>User Name : {ele.email}</p>
-            <p>User Phone : {ele.phone}</p>
-            <p>Admin : {isAdmin(ele.is_admin)}</p>
+            <p>
+              <span>User ID: </span>
+              {ele.user_id}
+            </p>
+            <p>
+              <span>User Name: </span>
+              {ele.username}
+            </p>
+            <p>
+              <span>Email: </span>
+              {ele.email}
+            </p>
+            <p>
+              <span>Phone Number: </span>
+              {ele.phone}
+            </p>
+            <p>
+              <span>Admin: </span>
+              {isAdmin(ele.is_admin)}
+            </p>
           </div>
         );
       })}
-    </>
+    </div>
   );
 }
 

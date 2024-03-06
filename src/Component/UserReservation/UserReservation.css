@@ -1,68 +1,163 @@
-/* styles.css */
-
-/* Table Styles */
-table {
-    border-collapse: collapse;
-    width: 100%;
+.currentBooking {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
-table th,
-table td {
-    border-bottom: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+.currentBooking .container h1 {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-/* Edit Reservation Modal Styles */
-.edit-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+.currentBooking .container h1 span {
+  color: red;
 }
 
-/* Buttons Styles */
-button {
-    margin-right: 10px;
-    cursor: pointer;
+/* -------- Table Styles ---------- */
+.currentBooking .container .responsiveTable {
+  overflow: auto;
+  background-color: #eee;
+  border: 1px solid lightgray;
+  border-radius: 10px;
 }
 
-/* Form Input Styles */
-label {
-    display: block;
-    margin-bottom: 10px;
+.currentBooking .container .responsiveTable table {
+  border-collapse: collapse;
+  min-width: 700px;
+  width: 100%;
 }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+.currentBooking .container table th,
+.currentBooking .container table td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
 }
 
-/* Header Styles */
-h1 {
-    margin-bottom: 20px;
+.currentBooking .container table .delete-button,
+.currentBooking .container table .edit-button {
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.delete-button {
-    background-color: #ff6347; /* Use your desired color */
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    margin-left: 5px; /* Adjust spacing as needed */
-  }
-  
-  .delete-button:hover {
-    background-color: #d34832; /* Adjust hover color as needed */
-  }
+.currentBooking .container table .delete-button {
+  background-color: #ff6347;
+  margin-left: 5px;
+}
 
+.currentBooking .container table .edit-button {
+  background-color: #009fe3;
+}
+
+.currentBooking .container table .edit-button:hover {
+  background-color: #017aae;
+}
+
+.currentBooking .container table .delete-button:hover {
+  background-color: #d34832; /* Adjust hover color as needed */
+}
+
+/* Reservation Modal Styles */
+
+.currentBooking .container .edit-modal {
+  border: 1px solid lightgray;
+  margin: 50px auto 0;
+  border-radius: 10px;
+  width: fit-content;
+  background-color: #eee;
+  padding: 20px;
+}
+
+.currentBooking .container .edit-modal h2 {
+  margin-top: 0;
+}
+
+.currentBooking .container .edit-modal label {
+  margin-bottom: 20px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.currentBooking .container .edit-modal .button {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.currentBooking .container .edit-modal .button button {
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #009fe3;
+}
+
+.currentBooking .container .edit-modal .button button:hover {
+  background-color: #017aae;
+}
+
+/* Delete Modal Styles */
 
 .confirmation-modal {
+  margin-top: 50px;
+  padding: 20px;
+  border: 1px solid lightgray;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.confirmation-modal h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.confirmation-modal .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.confirmation-modal .button button {
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.confirmation-modal .button button:first-child {
+  background-color: #ff6347;
+}
+
+.confirmation-modal .button button:hover:first-child {
+  background-color: #d34832;
+}
+
+.confirmation-modal .button button:last-child {
+  background-color: #009fe3;
+}
+
+.confirmation-modal .button button:hover:last-child {
+  background-color: #017aae;
+}
+
+/* .currentBooking .container table th .edit-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+} */
+
+/* .confirmation-modal {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -81,7 +176,7 @@ h1 {
 }
 
 .confirmation-modal button.no {
-  background-color: #ff4d4d; /* Red background color */
-  color: #fff; /* White text color */
+  background-color: #ff4d4d; 
+  color: #fff; 
   border: none;
-}
+} */

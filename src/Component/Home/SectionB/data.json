@@ -1,0 +1,57 @@
+{
+    "rooms": [
+      {
+        "type": "Standard",
+        "photo": "/assets/imgs/royalRooms/2.jpg",
+        "Education": "Double",
+        "Interests": "football - video games",
+        "gitHubLink": "https://github.com/AbdullahKadad"
+      },
+      {
+        "type": "Double",
+        "photo": "/assets/imgs/royalRooms/3.jpg",
+        "Education": "Software Engineer",
+        "Interests": "Horses - Designes - Sci-fi",
+        "gitHubLink": "https://github.com/Raghadkatout08"
+      },
+      {
+        "type": "Family",
+        "photo": "/assets/imgs/royalRooms/6.jpg",
+        "Education": "Software Engineer",
+        "Interests": "Media Translation - Video Games ",
+        "gitHubLink": "https://github.com/balqeesHmoud"
+      },
+      {
+        "type": "Royal",
+        "photo": "/assets/imgs/royalRooms/5.jpg",
+        "Education": "Software Engineer",
+        "Interests": "Database Design - React.js  ",
+        "gitHubLink": "https://github.com/Yaman-Katalan"
+      }
+      ,
+      {
+        "type": "Presidential Suite",
+        "photo": "/assets/imgs/royalRooms/6.jpg",
+        "Education": "Software Engineer",
+        "Interests": "Database Design - React.js  ",
+        "gitHubLink": "https://github.com/Yaman-Katalan"
+      }
+      ,
+      {
+        "type": "Deluxe ",
+        "photo": "/assets/imgs/royalRooms/2.jpg",
+        "Education": "Software Engineer",
+        "Interests": "Database Design - React.js  ",
+        "gitHubLink": "https://github.com/Yaman-Katalan"
+      }
+      ,
+      {
+        "type": "Duplex/Triplex",
+        "photo": "/assets/imgs/royalRooms/3.jpg",
+        "Education": "Software Engineer",
+        "Interests": "Database Design - React.js  ",
+        "gitHubLink": "https://github.com/Yaman-Katalan"
+      }
+    ]
+  }
+  

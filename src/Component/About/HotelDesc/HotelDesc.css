@@ -1,20 +1,29 @@
-.about--container{
-  color: #333533;
-  margin: 40px;
-  font-size: 18px;
- 
-  border: 1px solid gold;
-  background-color: #f9dc5c;
-  border-radius: 10px;
+.hotel-text {
+  padding-top: 100px;
 }
-.Logo{
-  width: fit-content;
-  margin: auto;
+.hotel-text .container {
+  background-color: #f2f6fa;
+  border: 3px solid #feba02;
+  border-radius: 15px;
+  padding: 50px;
 }
 
-.About--Section{
+.hotel-text .container .image {
   text-align: center;
-  width: fit-content;
-  padding: 50px;
-  line-height: 28px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+.hotel-text .container .image img {
+  width: 250px;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.hotel-text .container p {
+  font-size: 30px;
+
+  /* font-family: "Caveat", cursive; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
