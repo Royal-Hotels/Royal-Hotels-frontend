@@ -59,7 +59,7 @@ function Login() {
                 if (loginResult.data.is_admin) {
                     navigate('/admin-page');
                 } else if (loginResult.data.user_id) {
-                    navigate(`/res/${loginResult.data.user_id}`);
+                    navigate(`/booking/${loginResult.data.user_id}`);
                 } else {
                     console.error('User ID is missing in the server response.');
                 }
