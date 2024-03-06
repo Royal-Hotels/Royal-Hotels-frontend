@@ -4,12 +4,11 @@ import roomImg from "../Search/RoomPic/hotel-room.jpeg";
 import { Link, useNavigate } from "react-router-dom";
 import useSession from "../../SessionProvider/SessionProvider";
 
-
 function AvaliableRooms(props) {
   const { session } = useSession();
-  console.log('Session in AvaliableRooms:', session);
+  console.log("Session in AvaliableRooms:", session);
   const user = session?.user_id;
-  console.log('User in AvaliableRooms:', user);
+  console.log("User in AvaliableRooms:", user);
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [rooms, setRooms] = useState([]);
@@ -40,8 +39,6 @@ function AvaliableRooms(props) {
     }
   }
 
-
-
   useEffect(() => {
     const fetchRooms = async () => {
       try {
@@ -64,26 +61,58 @@ function AvaliableRooms(props) {
     if (user) {
       navigate(`/booking/${roomId}/${user}`);
     } else {
-      navigate('/login');
+      navigate("/login");
     }
   };
 
   return (
     <>
-      <div className="room-container">
-        {roomsArray.map((room, index) => {
-          if (room.is_available && props.location === "all-locations") {
-            return (
-              <Link
-                to={user ? `/booking/${room.room_id}/${user}` : '/login'}
-                key={index}
-              >
-                <div className="room--card">
+      <div className="availableRooms">
+        <div className="container">
+          {roomsArray.map((room, index) => {
+            if (room.is_available && props.location === "all-locations") {
+              return (
+                <Link
+                  to={user ? `/booking/${room.room_id}/${user}` : "/login"}
+                  key={index}
+                >
+                  <div className="room-card">
+                    <img
+                      src={`assets/imgs/royalRooms/${index + 1}.jpg`}
+                      className="room-img"
+                      alt="room"
+                    />
+                    <div className="info">
+                      <span className="city">
+                        {getLocationFromBranchId(room.branch_id)}
+                      </span>
+                      <p className="price">
+                        Price: <span className="bold">{room.price}</span> JD
+                      </p>
+                      <p className="capacity">
+                        Capacity: <span className="bold">{room.capacity}</span>
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            }
+            if (
+              room.is_available &&
+              getLocationFromBranchId(room.branch_id) === props.location
+            ) {
+              return (
+                <div
+                  className="room-card"
+                  key={index}
+                  onClick={() => handleRoomClick(room.room_id)}
+                >
                   <img src={roomImg} className="room-img" alt="room" />
-                  <span className="badge">
-                    {getLocationFromBranchId(room.branch_id)}
-                  </span>
-                  <div className="info--section">
+
+                  <div className="info">
+                    <span className="city">
+                      {getLocationFromBranchId(room.branch_id)}
+                    </span>
                     <p className="price">
                       Price: <span className="bold">{room.price}</span> JD
                     </p>
@@ -92,35 +121,10 @@ function AvaliableRooms(props) {
                     </p>
                   </div>
                 </div>
-              </Link>
-            );
-          }
-          if (
-            room.is_available &&
-            getLocationFromBranchId(room.branch_id) === props.location
-          ) {
-            return (
-              <div
-                className="room--card"
-                key={index}
-                onClick={() => handleRoomClick(room.room_id)}
-              >
-                <img src={roomImg} className="room-img" alt="room" />
-                <span className="badge">
-                  {getLocationFromBranchId(room.branch_id)}
-                </span>
-                <div className="info--section">
-                  <p className="price">
-                    Price: <span className="bold">{room.price}</span> JD
-                  </p>
-                  <p className="capacity">
-                    Capacity: <span className="bold">{room.capacity}</span>
-                  </p>
-                </div>
-              </div>
-            );
-          }
-        })}
+              );
+            }
+          })}
+        </div>
       </div>
     </>
   );

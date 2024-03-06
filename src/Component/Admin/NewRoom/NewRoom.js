@@ -37,7 +37,7 @@ function NewRoom() {
         }
       );
     } catch (error) {
-      console.log(room)
+      console.log(room);
       console.error("Error posting data:", error);
     }
   };
@@ -48,7 +48,7 @@ function NewRoom() {
 
   return (
     <div className="roomForm">
-      <form onSubmit={handleSubmit}>
+      <form className="labelHidden" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="branch">Branch</label>
           <select name="branch" id="branch" required>

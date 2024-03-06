@@ -77,7 +77,7 @@ function Footer() {
         </div>
       </div>
       <div className="copy-right">
-        Made With <span>&hearts;</span> By Yaman
+        Made With <span>&hearts;</span> By Royal Team
       </div>
     </div>
   );

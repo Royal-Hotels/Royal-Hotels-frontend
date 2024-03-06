@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./API.css";
 
 function UserConverter() {
   const [result, setResult] = useState("");
@@ -29,34 +30,47 @@ function UserConverter() {
   };
 
   return (
-    <div>
-      <h1>User Converter</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="from">From</label>
-          <input
-            placeholder="Please enter country code with currency EX. JOD, USD"
-            type="text"
-            id="from"
-            name="from"
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="to">To</label>
-          <input
-            placeholder="Please enter country code with currency EX. JOD, USD"
-            type="text"
-            id="to"
-            name="to"
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="amount">Amount</label>
-          <input type="number" id="amount" name="amount"></input>
-        </div>
-        <button type="submit">Convert</button>
-      </form>
-      {result && <p>Result: {result}</p>}
+    <div className="currencyForm">
+      <div className="container">
+        <h1>Currency Converter</h1>
+        <form className="labelHidden" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="from">From</label>
+            <input
+              placeholder="Enter cc with currency. (EX. JOD, USD)"
+              type="text"
+              id="from"
+              name="from"
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="to">To</label>
+            <input
+              placeholder="Enter cc with currency. (EX. JOD, USD)"
+              type="text"
+              id="to"
+              name="to"
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="amount">Amount</label>
+            <input
+              placeholder="Enter currency amount"
+              type="number"
+              id="amount"
+              name="amount"
+            ></input>
+          </div>
+          <div className="button">
+            <button type="submit">Convert</button>
+          </div>
+        </form>
+        {result && (
+          <p className="result">
+            <span>Result:</span> {result}
+          </p>
+        )}
+      </div>
     </div>
   );
 }

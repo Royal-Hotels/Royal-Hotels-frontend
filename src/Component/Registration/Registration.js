@@ -54,7 +54,7 @@ const Registration = () => {
   return (
     <div className="createAccount">
       <h1>Registration</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="labelHidden" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="a">Username:</label>
           <input

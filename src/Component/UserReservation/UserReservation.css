@@ -6,10 +6,17 @@
 .currentBooking .container h1 {
   text-align: center;
   margin-bottom: 50px;
+  font-family: "Cairo", sans-serif;
+  /* font-family: "Madimi One", sans-serif; */
+  /* font-family: "Ojuju", sans-serif; */
+  /* font-family: "Rajdhani", sans-serif; */
+  /* font-family: "Caveat", cursive; */
+  /* font-family: "Indie Flower", cursive; */
+  /* font-family: "Comic Neue", cursive; */
 }
 
 .currentBooking .container h1 span {
-  color: red;
+  color: #009fe3;
 }
 
 /* -------- Table Styles ---------- */
@@ -145,38 +152,3 @@
 .confirmation-modal .button button:hover:last-child {
   background-color: #017aae;
 }
-
-/* .currentBooking .container table th .edit-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-} */
-
-/* .confirmation-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ccc;
-  text-align: center;
-  z-index: 1000;
-}
-
-.confirmation-modal button {
-  margin: 0 10px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.confirmation-modal button.no {
-  background-color: #ff4d4d; 
-  color: #fff; 
-  border: none;
-} */

@@ -32,7 +32,7 @@ function Search() {
   //   }
   // }
 
- // -------------------------------------------
+  // -------------------------------------------
 
   function getHotelLocationsArray(array) {
     let locationArray = [];
@@ -52,16 +52,12 @@ function Search() {
     setSelectedOption(event.target.value);
   };
   //-----------------------------------------------------------------
- 
+
   //-----------------------------------------------------------------
 
-
-
-
   return (
-    <>
-     
-      <form>
+    <div className="roomFilter">
+      <form className="filterForm">
         <select
           id="selectLocation"
           name="selectLocation"
@@ -81,7 +77,7 @@ function Search() {
         </select>
       </form>
       <AvalibleRooms location={selectedOption} />
-    </>
+    </div>
   );
 }
 

@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
-import useSession from '../../SessionProvider/SessionProvider';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams, useNavigate } from "react-router-dom";
+import useSession from "../../SessionProvider/SessionProvider";
+import "./Booking.css";
 
 const Booking = () => {
   const { roomId, userId } = useParams();
@@ -12,8 +13,8 @@ const Booking = () => {
   const initializeFormData = () => ({
     user_id: userId,
     room_id: roomId,
-    check_in_date: '',
-    check_out_date: '',
+    check_in_date: "",
+    check_out_date: "",
     payment_method: [],
   });
 
@@ -21,14 +22,14 @@ const Booking = () => {
   const [availableRooms, setAvailableRooms] = useState([]);
 
   useEffect(() => {
-    const apiURL = 'https://movies-app-vkjw.onrender.com/usersRooms';
+    const apiURL = "https://movies-app-vkjw.onrender.com/usersRooms";
 
     const fetchData = async () => {
       try {
         const response = await axios.get(apiURL);
         setAvailableRooms(response.data);
       } catch (error) {
-        console.error('Error fetching available rooms:', error);
+        console.error("Error fetching available rooms:", error);
       }
     };
 
@@ -40,11 +41,12 @@ const Booking = () => {
 
     setFormData((prevData) => ({
       ...prevData,
-      [name]: type === 'checkbox'
-        ? checked
-          ? [...prevData.payment_method, value]
-          : prevData.payment_method.filter(method => method !== value)
-        : value,
+      [name]:
+        type === "checkbox"
+          ? checked
+            ? [...prevData.payment_method, value]
+            : prevData.payment_method.filter((method) => method !== value)
+          : value,
     }));
   };
 
@@ -52,75 +54,109 @@ const Booking = () => {
     e.preventDefault();
 
     try {
-      const apiURL = 'https://movies-app-vkjw.onrender.com/usersRooms';
+      const apiURL = "https://movies-app-vkjw.onrender.com/usersRooms";
 
       const response = await fetch(`${apiURL}/${user}`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        console.error('Error creating reservation:', errorData);
+        console.error("Error creating reservation:", errorData);
       } else {
         const responseData = await response.json();
-        console.log('Reservation created successfully:', responseData);
+        console.log("Reservation created successfully:", responseData);
         navigate(`/res/${user}`);
       }
     } catch (error) {
-      console.error('Fetch error:', error);
+      console.error("Fetch error:", error);
     }
   };
 
   return (
-    <div>
-      <h2>Reservation Form</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          User ID:
-          <span>{formData.user_id}</span>
-        </label>
-        <br />
-        <label>
-          Room ID:
-          <span>{formData.room_id}</span>
-        </label>
+    <div className="bookingForm">
+      <div className="container">
+        <h2>Reservation Form</h2>
+        <form onSubmit={handleSubmit}>
+          <label>
+            User ID:
+            <span>{formData.user_id}</span>
+          </label>
 
-        <label>
-          Check-in Date:
-          <input type="date" name="check_in_date" onChange={handleInputChange} value={formData.check_in_date} required />
-        </label>
-        <br />
-        <label>
-          Check-out Date:
-          <input type="date" name="check_out_date" onChange={handleInputChange} value={formData.check_out_date} required />
-        </label>
-        <br />
-        <label>
-          Payment Method:
-          <div>
-            <input type="checkbox" name="payment_method" value="visa" onChange={handleInputChange} />
-            <span>Visa Card</span>
+          <label>
+            Room ID:
+            <span>{formData.room_id}</span>
+          </label>
+
+          <label>
+            Check-in Date:
+            <input
+              type="date"
+              name="check_in_date"
+              onChange={handleInputChange}
+              value={formData.check_in_date}
+              required
+            />
+          </label>
+
+          <label>
+            Check-out Date:
+            <input
+              type="date"
+              name="check_out_date"
+              onChange={handleInputChange}
+              value={formData.check_out_date}
+              required
+            />
+          </label>
+
+          <label className="paymentMethods">Payment Method: </label>
+          <div className="parent">
+            <div>
+              <input
+                type="checkbox"
+                name="payment_method"
+                value="visa"
+                onChange={handleInputChange}
+              />
+              <span>Visa Card</span>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="payment_method"
+                value="mastercard"
+                onChange={handleInputChange}
+              />
+              <span>Master Card</span>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="payment_method"
+                value="paypal"
+                onChange={handleInputChange}
+              />
+              <span>PayPal</span>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="payment_method"
+                value="cash"
+                onChange={handleInputChange}
+              />
+              <span>Cash</span>
+            </div>
           </div>
-          <div>
-            <input type="checkbox" name="payment_method" value="mastercard" onChange={handleInputChange} />
-            <span>Master Card</span>
-          </div>
-          <div>
-            <input type="checkbox" name="payment_method" value="paypal" onChange={handleInputChange} />
-            <span>PayPal</span>
-          </div>
-          <div>
-            <input type="checkbox" name="payment_method" value="cash" onChange={handleInputChange} />
-            <span>Cash</span>
-          </div>
-        </label>
-        <br />
-        <button type="submit">Submit Reservation</button>
-      </form>
+
+          <button type="submit">Submit Reservation</button>
+        </form>
+      </div>
     </div>
   );
 };

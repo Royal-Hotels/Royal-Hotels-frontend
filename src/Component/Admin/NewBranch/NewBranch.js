@@ -24,7 +24,7 @@ function NewBranch() {
 
   return (
     <div className="branchForm">
-      <form onSubmit={handleSubmit}>
+      <form className="labelHidden" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="Bname">Branch Name</label>
           <input

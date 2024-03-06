@@ -12,9 +12,9 @@ function Home() {
       <Welcome />
       <SectionA />
       <SectionB />
-      <Branches/>
-      <APIFeatures/>
       <Service />
+      <Branches />
+      <APIFeatures />
     </>
   );
 }
