@@ -1,6 +1,10 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import useSession from "../SessionProvider/SessionProvider";
+
+
 function Navbar() {
+  const { session } = useSession();
   return (
     <ul className="rowTwo">
       <li>
@@ -18,11 +22,13 @@ function Navbar() {
           <i className="fa-solid fa-bed"></i>Rooms
         </Link>
       </li>
-      <li>
-        <Link to="#">
-          <i className="fa-regular fa-calendar-check"></i>Your Reservation
-        </Link>
-      </li>
+      {session ? (
+        <li>
+          <Link to="#">
+            <i className="fa-regular fa-calendar-check"></i>Your Reservation
+          </Link>
+        </li>
+      ) : null}
       <li>
         <Link to="/about">
           <i className="fa-solid fa-info"></i>About
