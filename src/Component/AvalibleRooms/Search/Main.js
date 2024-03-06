@@ -1,4 +1,4 @@
-import Search from "./Search/Search";
+import Search from "./Search";
 import Reservations from "../Resevations/Reservations";
 
 
@@ -6,9 +6,7 @@ import Reservations from "../Resevations/Reservations";
 function Home(){
   return(
     <>
-      {/* <Search/> */}
-      <Reservations/>
-     
+      <Search/> 
     </>
   )
 }
