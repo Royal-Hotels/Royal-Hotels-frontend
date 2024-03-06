@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
- 
+
 
 const Registration = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     username: '',
     phone: '',
@@ -19,23 +21,19 @@ const Registration = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    // Reset the password mismatch message when the user starts typing
     setPasswordMismatch(false);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if passwords match
     if (formData.password !== formData.confirmPassword) {
-      // Set passwordMismatch to true and return early
       setPasswordMismatch(true);
       return;
     }
 
     try {
-      // Make a POST request to your server endpoint
-      const response = await axios.post('https://movies-app-vkjw.onrender.com/user', {
+      const response = await axios.post('https://movies-app-vkjw.onrender.com/register', {
         username: formData.username,
         phone: formData.phone,
         email: formData.email,
@@ -44,17 +42,15 @@ const Registration = () => {
 
       console.log('Registration successful', response.data);
 
-      // Set registrationSuccess to true upon successful registration
       setRegistrationSuccess(true);
+      navigate('/login');
 
-      // You may want to redirect the user or perform other actions after successful registration
     } catch (error) {
       console.error('Registration failed', error.response.data);
-      // Handle registration failure, show error messages, etc.
     }
   };
 
-  
+
 
   return (
     <div>
@@ -94,16 +90,16 @@ const Registration = () => {
         <br />
         <button type="submit">Register</button>
       </form>
-   {/* Render the Login component if registration is successful */}
-   {registrationSuccess && (
+
+      {registrationSuccess && (
         <p>
           Registration successful!{' '}
-          <Link to="/login">Click here to log in</Link>
+          You will be redirected to <Link to="/login">login</Link>.
         </p>
       )}
     </div>
   );
-  
+
 };
 
 export default Registration;
