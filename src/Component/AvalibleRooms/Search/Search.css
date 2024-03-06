@@ -1,0 +1,18 @@
+form {
+ 
+  width: fit-content;
+  margin: 20px auto 0 ;
+ 
+}
+.reservations--button:hover{
+  opacity: 0.9;
+}
+select{
+  padding: 10px 15px;
+  background-color: rgb(146, 165, 228);
+  border: none;
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+
+}

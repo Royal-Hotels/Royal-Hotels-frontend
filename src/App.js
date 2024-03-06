@@ -9,21 +9,42 @@ import UserReservation from "./Component/UserReservation/UserReservation";
 import Header from "./Component/Header/Header";
 import Footer from "./Component/Footer/Footer";
 import Admin from "./Component/Admin/Admin";
+import Booking from "./Component/AvalibleRooms/Booking/Booking"
+import AvalibleRooms from "./Component/AvalibleRooms/Search/AvalibleRooms";
+import Search from "./Component/AvalibleRooms/Search/Search";
+
+//--------------------------------
+import Main from "./Component/AvalibleRooms/Search/Main"
+
+//--------------------------------
 function App() {
   return (
     <>
-    <Header />
+    {/* <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />} /> */}
         {/* <Route path="/royalFeatures" element={<API />} />      this form me abdullah leave it here */}
-        {/* <Route path="/rooms" element={<AvalibleRooms />} /> */}
+        {/* <Route path="/rooms" element={<Search />} />
+        <Route path="/usersRooms/:roomId" element={<Booking/>} />
         <Route path="/res/:user_id" element={<UserReservation />} />
         <Route path="/admin-page" element={<Admin/>}></Route>
       </Routes>
-      <Footer/>
+      <Footer/> */}
+      
+      {/* Route for balquess */}
+      <Routes>
+      <Route path="/usersRooms/:roomId" element={<Booking/>} />
+      </Routes>
+      <Main/>
+      {/* Route for balquess */}
+      
+    
+      
+      
+
     </>
   );
 }

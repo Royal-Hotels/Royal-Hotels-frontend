@@ -1,14 +1,18 @@
 import "./Search.css";
 import { useEffect, useState } from "react";
-import AvalibleRooms from "../AvalibleRooms";
+import AvalibleRooms from "./AvalibleRooms";
+import Reservations from "../Resevations/Reservations";
 
 function Search() {
   //----- getAllBranches
   const [data, setData] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3002/allBranchs");
+        const response = await fetch(
+          "https://movies-app-vkjw.onrender.com/allBranchs"
+        );
         const result = await response.json();
 
         setData(result);
@@ -19,6 +23,17 @@ function Search() {
 
     fetchData();
   }, []);
+
+  // function getLocationFromBranchId(id) {
+  //   const branches = data;
+  //   for (let branch of branches) {
+  //     if (branch.branch_id === id) {
+  //       return branch.location;
+  //     }
+  //   }
+  // }
+
+ // -------------------------------------------
 
   function getHotelLocationsArray(array) {
     let locationArray = [];
@@ -32,44 +47,42 @@ function Search() {
   const locationArray = getHotelLocationsArray(data);
 
   //-------------------------------------------------------------
-  const [selectedOption, setSelectedOption] = useState('none');
+  const [selectedOption, setSelectedOption] = useState("all-locations");
 
   const handleOptionChange = (event) => {
-    
     setSelectedOption(event.target.value);
   };
   //-----------------------------------------------------------------
-
+ 
   //-----------------------------------------------------------------
+
+
 
 
   return (
     <>
-      <form >
-        <label htmlFor="selectLocation">Choose a Location:</label>
+     
+      <form>
         <select
           id="selectLocation"
           name="selectLocation"
           value={selectedOption}
           onChange={handleOptionChange}
         >
-          <option value="Locations">All locations</option>
+          <option value="all-locations">All locations</option>
           {locationArray.map((location) => {
             return (
               <>
-                 
-                <option value={location} key={location}>{location} </option>
-                
+                <option value={location} key={location}>
+                  {location}{" "}
+                </option>
               </>
             );
           })}
         </select>
-
-       
-
-        <input  type="submit" value="Search" />
       </form>
-      <AvalibleRooms location={selectedOption}/>
+      <AvalibleRooms location={selectedOption} />
+      <Reservations/>
     </>
   );
 }
