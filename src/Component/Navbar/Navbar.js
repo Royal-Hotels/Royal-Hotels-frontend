@@ -8,12 +8,12 @@ function Navbar() {
   return (
     <ul className="rowTwo">
       <li>
-        <Link to="/home">
+        <Link to="/">
           <i className="fa-solid fa-house"></i>Home
         </Link>
       </li>
       <li>
-        <Link to="">
+        <Link to="/royalFeatures">
           <i className="fa-solid fa-feather-pointed"></i>Royal Features
         </Link>
       </li>

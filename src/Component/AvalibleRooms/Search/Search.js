@@ -1,7 +1,6 @@
 import "./Search.css";
 import { useEffect, useState } from "react";
 import AvalibleRooms from "./AvalibleRooms";
-import Reservations from "../Resevations/Reservations";
 
 function Search() {
   //----- getAllBranches
@@ -82,7 +81,6 @@ function Search() {
         </select>
       </form>
       <AvalibleRooms location={selectedOption} />
-      <Reservations/>
     </>
   );
 }

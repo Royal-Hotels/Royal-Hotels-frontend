@@ -26,33 +26,33 @@ function Footer() {
         <div className="B">
           <ul>
             <li>
-              <Link to="#">
+              <Link to="/">
                 <i className="fas fa-angle-double-right"></i>
-                Important Link 1
+                Home Page
               </Link>
             </li>
             <li>
-              <Link to="#">
+              <Link to="/royalFeatures">
                 <i className="fas fa-angle-double-right"></i>
-                Important Link 2
+                Royal Feature
               </Link>
             </li>
             <li>
-              <Link to="#">
+              <Link to="/search">
                 <i className="fas fa-angle-double-right"></i>
-                Important Link 3
+                Go To Rooms
               </Link>
             </li>
             <li>
-              <Link to="#">
+              <Link to="/about">
                 <i className="fas fa-angle-double-right"></i>
-                Important Link 4
+                About Us
               </Link>
             </li>
             <li>
-              <Link to="#">
+              <Link to="/login">
                 <i className="fas fa-angle-double-right"></i>
-                Important Link 5
+                Login
               </Link>
             </li>
           </ul>

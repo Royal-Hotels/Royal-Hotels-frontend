@@ -1,16 +1,15 @@
-// Booking.js
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import useSession from '../../SessionProvider/SessionProvider';
 
-function Booking() {
+const Booking = () => {
   const { roomId, userId } = useParams();
+  const navigate = useNavigate();
+  const { session } = useSession();
+  const { user_id: user } = session || {};
 
-  // console.log('roomId:', roomId);
-  // console.log('userId:', userId);
-
-  const [formData, setFormData] = useState({
+  const initializeFormData = () => ({
     user_id: userId,
     room_id: roomId,
     check_in_date: '',
@@ -18,41 +17,44 @@ function Booking() {
     payment_method: [],
   });
 
+  const [formData, setFormData] = useState(initializeFormData());
   const [availableRooms, setAvailableRooms] = useState([]);
 
   useEffect(() => {
-    axios.get('https://movies-app-vkjw.onrender.com/usersRooms')
-      .then(response => setAvailableRooms(response.data))
-      .catch(error => console.error('Error fetching available rooms:', error));
+    const apiURL = 'https://movies-app-vkjw.onrender.com/usersRooms';
+
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(apiURL);
+        setAvailableRooms(response.data);
+      } catch (error) {
+        console.error('Error fetching available rooms:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
 
-    if (type === 'checkbox') {
-      const updatedPaymentMethods = checked
-        ? [...formData.payment_method, value]
-        : formData.payment_method.filter(method => method !== value);
-
-      setFormData({
-        ...formData,
-        [name]: updatedPaymentMethods,
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    }
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === 'checkbox'
+        ? checked
+          ? [...prevData.payment_method, value]
+          : prevData.payment_method.filter(method => method !== value)
+        : value,
+    }));
   };
-
-  const staticUserId = 6;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`https://movies-app-vkjw.onrender.com/usersRooms/${staticUserId}`, {
+      const apiURL = 'https://movies-app-vkjw.onrender.com/usersRooms';
+
+      const response = await fetch(`${apiURL}/${user}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66,6 +68,7 @@ function Booking() {
       } else {
         const responseData = await response.json();
         console.log('Reservation created successfully:', responseData);
+        navigate(`/res/${user}`);
       }
     } catch (error) {
       console.error('Fetch error:', error);
@@ -120,6 +123,6 @@ function Booking() {
       </form>
     </div>
   );
-}
+};
 
 export default Booking;
