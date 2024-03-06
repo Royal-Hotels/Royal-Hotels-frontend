@@ -17,7 +17,7 @@ function APIFeatures() {
             Royal-Features."
           </p>
           <div className="mylink">
-            <Link to="your-conversion-page-url">Go to Currency Exchange</Link>
+            <Link to="/royalFeatures">Go to Currency Exchange</Link>
           </div>
         </div>
         {/* container end */}

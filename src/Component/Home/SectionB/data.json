@@ -3,54 +3,40 @@
       {
         "type": "Standard",
         "photo": "/assets/imgs/royalRooms/2.jpg",
-        "Education": "Double",
-        "Interests": "football - video games",
-        "gitHubLink": "https://github.com/AbdullahKadad"
+        "info": "Discover comfort and convenience in our standard hotel rooms. Featuring plush bedding for a restful night's sleep."
       },
       {
         "type": "Double",
         "photo": "/assets/imgs/royalRooms/3.jpg",
-        "Education": "Software Engineer",
-        "Interests": "Horses - Designes - Sci-fi",
-        "gitHubLink": "https://github.com/Raghadkatout08"
+        "info": " Indulge in luxury and space with our duplex hotel rooms. Spread across two levels, these stylish accommodations offer the..."
       },
       {
         "type": "Family",
         "photo": "/assets/imgs/royalRooms/6.jpg",
-        "Education": "Software Engineer",
-        "Interests": "Media Translation - Video Games ",
-        "gitHubLink": "https://github.com/balqeesHmoud"
+        "info": "Experience unparalleled luxury and sophistication in our triplex hotel rooms. Spread out across three levels, these opulent..."
       },
       {
         "type": "Royal",
         "photo": "/assets/imgs/royalRooms/5.jpg",
-        "Education": "Software Engineer",
-        "Interests": "Database Design - React.js  ",
-        "gitHubLink": "https://github.com/Yaman-Katalan"
+        "info": "Step into luxury and elegance with our suite accommodations. Designed for discerning travelers, our suites offer spacious living..."
       }
       ,
       {
         "type": "Presidential Suite",
         "photo": "/assets/imgs/royalRooms/6.jpg",
-        "Education": "Software Engineer",
-        "Interests": "Database Design - React.js  ",
-        "gitHubLink": "https://github.com/Yaman-Katalan"
+        "info": "Welcome to our family-friendly accommodations, designed with your comfort and convenience in mind. Our spacious family rooms..."
       }
       ,
       {
         "type": "Deluxe ",
         "photo": "/assets/imgs/royalRooms/2.jpg",
-        "Education": "Software Engineer",
-        "Interests": "Database Design - React.js  ",
-        "gitHubLink": "https://github.com/Yaman-Katalan"
+        "info": "Welcome to our family-friendly accommodations, designed with your comfort and convenience in mind. Our spacious family rooms..."
       }
       ,
       {
         "type": "Duplex/Triplex",
         "photo": "/assets/imgs/royalRooms/3.jpg",
-        "Education": "Software Engineer",
-        "Interests": "Database Design - React.js  ",
-        "gitHubLink": "https://github.com/Yaman-Katalan"
+        "info": "Welcome to our family-friendly accommodations, designed with your comfort and convenience in mind. Our spacious family rooms..."
       }
     ]
   }

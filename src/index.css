@@ -18,9 +18,9 @@ ul {
   padding: 0;
 }
 
-form label {
+/* form.labelHidden label {
   display: none;
-}
+} */
 
 body {
   margin: 0;

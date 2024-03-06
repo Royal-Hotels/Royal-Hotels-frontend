@@ -10,15 +10,12 @@ function SectionB() {
       <div class="container">
         <h1 className="main-title">Our Royal Rooms</h1>
         <div className="contents">
-          {roomData.rooms.map((card) => {
+          {roomData.rooms.map((card, index) => {
             return (
               <div>
-                <img src={card.photo} alt="" />
+                <img src={`assets/imgs/royalRooms/${index + 1}.jpg`} alt="" />
                 <h2>{card.type}</h2>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Atque placeat ut corrupti magni dolore fugit
-                </p>
+                <p>{card.info}</p>
               </div>
             );
           })}

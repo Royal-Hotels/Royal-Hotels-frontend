@@ -1,14 +1,91 @@
-.room-container{
-  
-  gap: 15px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  padding: 50px;
-  
-
+.availableRooms {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
-.room--card{
+
+.availableRooms .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.availableRooms .container .room-card img {
+  width: 100%;
+}
+
+.availableRooms .container .room-card .info {
+  padding: 15px;
+}
+
+.availableRooms .container .room-card {
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  background-color: #eee;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.availableRooms .container .room-card::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: var(--main-transition);
+}
+
+.availableRooms .container .room-card:hover::before {
+  animation: flashing 0.7s;
+}
+
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}
+
+.availableRooms .container .room-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.availableRooms .container .room-card .info p.price {
+  margin: 0;
+  padding: 15px 20px;
+  border-radius: 10px;
+  position: absolute;
+  background-color: #009fe38e;
+  font-weight: bold;
+  color: white;
+  top: 0;
+  left: 0;
+}
+
+.availableRooms .container .room-card .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.availableRooms .container .room-card .info span.city,
+.availableRooms .container .room-card .info p.capacity {
+  margin: 0;
+  font-weight: bold;
+  color: #009fe3;
+}
+
+/* .room--card {
   position: relative;
   width: 300px;
   display: flex;
@@ -18,24 +95,21 @@
   border-radius: 10px;
 }
 
-.room-img{
-  width: 100%;
-}
-.badge{
+.badge {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   background-color: aqua;
   padding: 3px;
   border-bottom-right-radius: 5px;
 }
 
-.info--section{
+.info--section {
   display: flex;
   flex-direction: column;
   padding: 10px;
   row-gap: 5px;
 }
-.bold{
+.bold {
   font-weight: bold;
-}
+} */
