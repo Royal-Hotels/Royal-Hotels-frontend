@@ -1,14 +1,18 @@
-// AvaliableRooms.js
-
 import "./AvalibleRooms.css";
 import { useState, useEffect } from "react";
 import roomImg from "../Search/RoomPic/hotel-room.jpeg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useSession from "../../SessionProvider/SessionProvider";
+
 
 function AvaliableRooms(props) {
-  const staticUserId = 6;
-
+  const { session } = useSession();
+  console.log('Session in AvaliableRooms:', session);
+  const user = session?.user_id;
+  console.log('User in AvaliableRooms:', user);
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
+  const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,7 +40,7 @@ function AvaliableRooms(props) {
     }
   }
 
-  const [rooms, setRooms] = useState([]);
+
 
   useEffect(() => {
     const fetchRooms = async () => {
@@ -56,13 +60,24 @@ function AvaliableRooms(props) {
 
   const roomsArray = rooms.result || [];
 
+  const handleRoomClick = (roomId) => {
+    if (user) {
+      navigate(`/booking/${roomId}/${user}`);
+    } else {
+      navigate('/login');
+    }
+  };
+
   return (
     <>
       <div className="room-container">
-        {roomsArray.map((room, index, array) => {
+        {roomsArray.map((room, index) => {
           if (room.is_available && props.location === "all-locations") {
             return (
-              <Link to={`/${room.room_id}/${staticUserId}`} key={index}>
+              <Link
+                to={user ? `/booking/${room.room_id}/${user}` : '/login'}
+                key={index}
+              >
                 <div className="room--card">
                   <img src={roomImg} className="room-img" alt="room" />
                   <span className="badge">
@@ -85,7 +100,11 @@ function AvaliableRooms(props) {
             getLocationFromBranchId(room.branch_id) === props.location
           ) {
             return (
-              <div className="room--card" key={index}>
+              <div
+                className="room--card"
+                key={index}
+                onClick={() => handleRoomClick(room.room_id)}
+              >
                 <img src={roomImg} className="room-img" alt="room" />
                 <span className="badge">
                   {getLocationFromBranchId(room.branch_id)}
