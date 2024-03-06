@@ -1,11 +1,13 @@
+// AvaliableRooms.js
+
 import "./AvalibleRooms.css";
 import { useState, useEffect } from "react";
 import roomImg from "../Search/RoomPic/hotel-room.jpeg";
 import { Link } from "react-router-dom";
 
-function AvalibleRooms(props) {
-  
-  //-------------------------------
+function AvaliableRooms(props) {
+  const staticUserId = 6;
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -34,7 +36,6 @@ function AvalibleRooms(props) {
     }
   }
 
-  //-------------------------------
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
@@ -52,30 +53,30 @@ function AvalibleRooms(props) {
     };
     fetchRooms();
   }, []);
-  
+
   const roomsArray = rooms.result || [];
-  console.log(roomsArray)
+
   return (
     <>
       <div className="room-container">
         {roomsArray.map((room, index, array) => {
           if (room.is_available && props.location === "all-locations") {
             return (
-              <Link to={`/usersRooms/${room.room_id}`} >
-              <div className="room--card" key={index}>
-                <img src={roomImg} className="room-img" alt="room"></img>
-                <span className="badge">
-                  {getLocationFromBranchId(room.branch_id)}
-                </span>
-                <div className="info--section">
-                  <p className="price">
-                    Price: <span className="bold">{room.price}</span> JD
-                  </p>
-                  <p className="capacity">
-                    Capacity: <span className="bold">{room.capacity}</span>
-                  </p>
+              <Link to={`/${room.room_id}/${staticUserId}`} key={index}>
+                <div className="room--card">
+                  <img src={roomImg} className="room-img" alt="room" />
+                  <span className="badge">
+                    {getLocationFromBranchId(room.branch_id)}
+                  </span>
+                  <div className="info--section">
+                    <p className="price">
+                      Price: <span className="bold">{room.price}</span> JD
+                    </p>
+                    <p className="capacity">
+                      Capacity: <span className="bold">{room.capacity}</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
               </Link>
             );
           }
@@ -85,7 +86,7 @@ function AvalibleRooms(props) {
           ) {
             return (
               <div className="room--card" key={index}>
-                <img src={roomImg} className="room-img" alt="room"></img>
+                <img src={roomImg} className="room-img" alt="room" />
                 <span className="badge">
                   {getLocationFromBranchId(room.branch_id)}
                 </span>
@@ -106,4 +107,4 @@ function AvalibleRooms(props) {
   );
 }
 
-export default AvalibleRooms;
+export default AvaliableRooms;
