@@ -1,6 +1,6 @@
 import "./Branches.css";
 import { useEffect, useState } from "react";
-import hotelPic from "./branchPic/hotel.jpg";
+import hotelPic from "./branchPic/10.jpg";
 
 function Branchrs() {
   const [data, setData] = useState([]);
@@ -8,7 +8,9 @@ function Branchrs() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://movies-app-vkjw.onrender.com/allBranchs");
+        const response = await fetch(
+          "https://movies-app-vkjw.onrender.com/allBranchs"
+        );
         const result = await response.json();
 
         setData(result);
@@ -38,7 +40,7 @@ function Branchrs() {
           return (
             <div key={branch.branch_id} className="hotelCard">
               <img
-                src={hotelPic}
+                src={`/assets/imgs/hotelBranches/${index + 1}.jpg`}
                 alt={"hotel-pic"}
                 className="hotel--img"
               ></img>

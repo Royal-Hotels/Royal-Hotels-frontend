@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
-
-
+import React, { useState } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import "./Registration.css";
 
 const Registration = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    username: '',
-    phone: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    username: "",
+    phone: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const [passwordMismatch, setPasswordMismatch] = useState(false);
@@ -33,73 +32,112 @@ const Registration = () => {
     }
 
     try {
-      const response = await axios.post('https://movies-app-vkjw.onrender.com/register', {
-        username: formData.username,
-        phone: formData.phone,
-        email: formData.email,
-        password_hash: formData.password,
-      });
+      const response = await axios.post(
+        "https://movies-app-vkjw.onrender.com/register",
+        {
+          username: formData.username,
+          phone: formData.phone,
+          email: formData.email,
+          password_hash: formData.password,
+        }
+      );
 
-      console.log('Registration successful', response.data);
+      console.log("Registration successful", response.data);
 
       setRegistrationSuccess(true);
-      navigate('/login');
-
+      navigate("/login");
     } catch (error) {
-      console.error('Registration failed', error.response.data);
+      console.error("Registration failed", error.response.data);
     }
   };
 
-
-
   return (
-    <div>
-      <h2>Registration</h2>
+    <div className="createAccount">
+      <h1>Registration</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input type="text" name="username" value={formData.username} onChange={handleChange} required />
-        </label>
-        <br />
-        <label>
-          Phone:
-          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-        </label>
-        <br />
-        <label>
-          Confirm Password:
+        <div>
+          <label htmlFor="a">Username:</label>
           <input
+            id="a"
+            placeholder="Enter your username"
+            type="text"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="b">Phone:</label>
+
+          <input
+            id="b"
+            placeholder="Enter your phone number"
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="c">Email:</label>
+          <input
+            id="c"
+            placeholder="Enter your email"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="d">Password: </label>
+          <input
+            id="d"
+            placeholder="Enter your password"
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="e">Confirm Password: </label>
+          <input
+            id="e"
+            placeholder="Confirm your password"
             type="password"
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleChange}
             required
           />
-        </label>
-        {passwordMismatch && <p style={{ color: 'red' }}>Passwords do not match</p>}
-        <br />
-        <button type="submit">Register</button>
+        </div>
+
+        {passwordMismatch && (
+          <p style={{ color: "red" }}>Passwords do not match</p>
+        )}
+        {/*  */}
+        <div className="button">
+          <button type="submit">Register</button>
+        </div>
       </form>
 
       {registrationSuccess && (
         <p>
-          Registration successful!{' '}
-          You will be redirected to <Link to="/login">login</Link>.
+          Registration successful! You will be redirected to{" "}
+          <Link to="/login">login</Link>.
         </p>
       )}
     </div>
   );
-
 };
 
 export default Registration;

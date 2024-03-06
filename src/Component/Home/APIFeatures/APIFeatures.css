@@ -1,0 +1,46 @@
+.apiFeatures {
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+.apiFeatures .container h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.apiFeatures .container {
+  background-color: #f2f6fa;
+  border: 3px solid #feba02;
+  border-radius: 15px;
+  padding: 50px;
+}
+
+.apiFeatures .container div p {
+  font-size: 30px;
+  /* font-family: "Caveat", cursive; */
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  /* padding: 25px; */
+}
+
+.apiFeatures .container div div.mylink {
+  text-align: center;
+}
+
+.apiFeatures .container div div.mylink a {
+  display: block;
+  width: fit-content;
+  margin: auto;
+  font-size: 30px;
+  padding: 10px 20px;
+  background-color: #feba02;
+  color: #222;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.apiFeatures .container div div.mylink a:hover {
+  background-color: #d18700;
+  color: white;
+}

@@ -8,7 +8,8 @@
 }
 
 .admin .container .button button {
-  width: 230px;
+  font-family: "Comic Neue", cursive;
+  width: 250px;
   border: none;
   padding: 15px 20px;
   background-color: #222;
@@ -50,7 +51,7 @@
 
 .roomForm form div:first-child select {
   padding-left: 15px;
-  width: 250px;
+  width: 300px;
   height: 50px;
   outline: none;
   border-radius: 5px;
@@ -60,7 +61,7 @@
 .roomForm form div:not(:last-child) input,
 .branchForm form div:not(:last-child) input {
   border-radius: 5px;
-  width: 250px;
+  width: 300px;
   height: 50px;
   padding-left: 15px;
   background-color: #eee;
@@ -93,6 +94,8 @@
 
 .roomForm form div:last-child input,
 .branchForm form div:last-child input {
+  font-family: "Comic Neue", cursive;
+  font-size: 20px;
   border: none;
   background-color: #feba02;
   padding: 10px 20px;
@@ -119,7 +122,8 @@
 }
 
 /* --------------------------- */
-.activeR {
+.activeR,
+.allUsers {
   margin-top: 50px;
   margin-bottom: 100px;
   display: grid;
@@ -127,23 +131,25 @@
   gap: 50px;
 }
 
-.activeR div {
+.activeR div,
+.allUsers div {
   padding: 30px;
   border-radius: 10px;
   background-color: #eee;
 }
 
-.activeR div p {
+.activeR div p,
+.allUsers div p {
   font-size: 18px;
   color: #333333;
   font-weight: bold;
 }
 
-.activeR div p span {
+.activeR div p span,
+.allUsers div p span {
   font-weight: bold;
   color: #001f3f;
   display: inline-block;
   margin-right: 15px;
   width: 135px;
 }
-

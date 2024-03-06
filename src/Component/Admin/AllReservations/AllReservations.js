@@ -9,7 +9,7 @@ function AllReservations() {
       const response = await axios.get(
         "https://movies-app-vkjw.onrender.com/adminAllRes"
       );
-      setData(response.data);
+      setData(response.data.reservations);
     } catch (error) {
       console.log(error);
     }
