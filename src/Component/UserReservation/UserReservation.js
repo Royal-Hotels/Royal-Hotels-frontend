@@ -8,6 +8,7 @@ function UserReservation() {
     const [editingReservation, setEditingReservation] = useState(null);
     const [showConfirmation, setShowConfirmation] = useState(false);
     const [deletingReservationId, setDeletingReservationId] = useState(null);
+    const [userData, setUserData] = useState(null);
 
 
     const { user_id } = useParams();
@@ -15,6 +16,17 @@ function UserReservation() {
     useEffect(() => {
         const fetchData = async () => {
             try {
+
+                const usersResponse = await fetch("https://movies-app-vkjw.onrender.com/adminAllUsers");
+                if (!usersResponse.ok) {
+                    throw new Error(`HTTP error! Status: ${usersResponse.status}`);
+                }
+
+                const usersData = await usersResponse.json();
+                const user = usersData.find((userData) => userData.user_id === parseInt(user_id, 10));
+                setUserData(user);
+
+
                 const response = await fetch(`https://movies-app-vkjw.onrender.com/usersRes/${user_id}`);
 
                 if (!response.ok) {
@@ -117,7 +129,7 @@ function UserReservation() {
 
     return (
         <>
-            <h1>Reservation for User {user_id}</h1>
+            <h1>Welcome back, {userData ? userData.username : user_id} 💖 Discover your reservations below: </h1>
             <table className="reservation-table">
                 <thead>
                     <tr>

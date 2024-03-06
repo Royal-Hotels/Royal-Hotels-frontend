@@ -6,7 +6,9 @@ function NewRoom() {
   const [room, setRoom] = useState({});
   const fetchBranch = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/allBranchs");
+      const response = await axios.get(
+        "https://movies-app-vkjw.onrender.com/allBranchs"
+      );
       setBranch(response.data);
     } catch (error) {
       console.log(error);
@@ -20,16 +22,22 @@ function NewRoom() {
       roomCap: e.target.capacity.value,
       roomPri: e.target.price.value,
       branchId: e.target.branch.value,
+      image_url: e.target.image_url.value,
     };
     setRoom(newRoom); // Update room state
     console.log(newRoom.branchId); // Access branchId from updated state
     try {
-      await axios.post(`http://localhost:3000/branches/${newRoom.branchId}`, {
-        room_number: newRoom.roomNum,
-        capacity: newRoom.roomCap,
-        price: newRoom.roomPri,
-      });
+      await axios.post(
+        `https://movies-app-vkjw.onrender.com/adminNewRoom/${newRoom.branchId}`,
+        {
+          room_number: newRoom.roomNum,
+          capacity: newRoom.roomCap,
+          price: newRoom.roomPri,
+          image_url: newRoom.image_url,
+        }
+      );
     } catch (error) {
+      console.log(room)
       console.error("Error posting data:", error);
     }
   };
@@ -79,6 +87,15 @@ function NewRoom() {
             type="number"
             id="price"
             name="price"
+          ></input>
+        </div>
+        <div>
+          <label htmlFor="image_url">Room Image</label>
+          <input
+            placeholder="Enter Room Image"
+            type="text"
+            id="image_url"
+            name="image_url"
           ></input>
         </div>
         <div>
