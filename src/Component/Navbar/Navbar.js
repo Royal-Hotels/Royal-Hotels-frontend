@@ -18,17 +18,17 @@ function Navbar() {
         </Link>
       </li>
       <li>
-        <Link to="#">
+        <Link to="/search">
           <i className="fa-solid fa-bed"></i>Rooms
         </Link>
       </li>
-      {session ? (
-        <li>
-          <Link to="#">
+      <li>
+        {session ? (
+          <Link to={`/res/${session.user_id}`}>
             <i className="fa-regular fa-calendar-check"></i>Your Reservation
           </Link>
-        </li>
-      ) : null}
+        ) : null}
+      </li>
       <li>
         <Link to="/about">
           <i className="fa-solid fa-info"></i>About
