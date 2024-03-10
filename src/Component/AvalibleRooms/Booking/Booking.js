@@ -22,7 +22,7 @@ const Booking = () => {
   const [availableRooms, setAvailableRooms] = useState([]);
 
   useEffect(() => {
-    const apiURL = "https://movies-app-vkjw.onrender.com/usersRooms";
+    const apiURL = `${process.env.REACT_APP_SERVER}/usersRooms`;
 
     const fetchData = async () => {
       try {
@@ -54,7 +54,7 @@ const Booking = () => {
     e.preventDefault();
 
     try {
-      const apiURL = "https://movies-app-vkjw.onrender.com/usersRooms";
+      const apiURL = `${process.env.REACT_APP_SERVER}/usersRooms`;
 
       const response = await fetch(`${apiURL}/${user}`, {
         method: "POST",

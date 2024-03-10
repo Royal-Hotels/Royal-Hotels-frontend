@@ -33,7 +33,7 @@ const Registration = () => {
 
     try {
       const response = await axios.post(
-        "https://movies-app-vkjw.onrender.com/register",
+        `${process.env.REACT_APP_SERVER}/register`,
         {
           username: formData.username,
           phone: formData.phone,

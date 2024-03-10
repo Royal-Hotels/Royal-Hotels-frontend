@@ -9,7 +9,7 @@ function Branchrs() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://movies-app-vkjw.onrender.com/allBranchs"
+          `${process.env.REACT_APP_SERVER}/allBranchs`
         );
         const result = await response.json();
 

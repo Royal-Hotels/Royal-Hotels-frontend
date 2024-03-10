@@ -17,7 +17,7 @@ function AvaliableRooms(props) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://movies-app-vkjw.onrender.com/allBranchs"
+          `${process.env.REACT_APP_SERVER}/allBranchs`
         );
         const result = await response.json();
 
@@ -43,7 +43,7 @@ function AvaliableRooms(props) {
     const fetchRooms = async () => {
       try {
         const response = await fetch(
-          "https://movies-app-vkjw.onrender.com/usersRooms"
+          `${process.env.REACT_APP_SERVER}/usersRooms`
         );
         const result = await response.json();
 

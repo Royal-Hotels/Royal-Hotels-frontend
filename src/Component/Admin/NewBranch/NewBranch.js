@@ -9,7 +9,7 @@ function NewBranch() {
     const image_url = e.target.image_url.value;
     try {
       const response = await axios.post(
-        `https://movies-app-vkjw.onrender.com/adminNewBranch`,
+        `${process.env.REACT_APP_SERVER}/adminNewBranch`,
         {
           branch_name,
           location,

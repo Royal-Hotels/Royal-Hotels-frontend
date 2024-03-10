@@ -21,7 +21,7 @@ function SessionProvider({ children }) {
   const login = async (email, password) => {
     try {
       const response = await fetch(
-        "https://movies-app-vkjw.onrender.com/login",
+        `${process.env.REACT_APP_SERVER}/login`,
         {
           method: "POST",
           headers: {

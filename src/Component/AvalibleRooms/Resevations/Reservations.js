@@ -8,7 +8,7 @@ function Reservations() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://movies-app-vkjw.onrender.com/usersRes/2"
+          `${process.env.REACT_APP_SERVER}/usersRes/2`
         );
         const result = await response.json();
 

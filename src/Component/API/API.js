@@ -9,14 +9,14 @@ function UserConverter() {
     e.preventDefault();
     const options = {
       method: "GET",
-      url: "https://currency-converter-pro1.p.rapidapi.com/convert",
+      url: `${process.env.REACT_APP_API_URL}`,
       params: {
         from: e.target.from.value,
         to: e.target.to.value,
         amount: e.target.amount.value,
       },
       headers: {
-        "X-RapidAPI-Key": "ea4468212cmshed32a43ece025b9p1beb37jsnd5fd58e22d5e",
+        "X-RapidAPI-Key": `${process.env.REACT_APP_API_KEY}`,
         "X-RapidAPI-Host": "currency-converter-pro1.p.rapidapi.com",
       },
     };

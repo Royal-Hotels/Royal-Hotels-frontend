@@ -7,7 +7,7 @@ function NewRoom() {
   const fetchBranch = async () => {
     try {
       const response = await axios.get(
-        "https://movies-app-vkjw.onrender.com/allBranchs"
+        `${process.env.REACT_APP_SERVER}/allBranchs`
       );
       setBranch(response.data);
     } catch (error) {
@@ -28,7 +28,7 @@ function NewRoom() {
     console.log(newRoom.branchId); // Access branchId from updated state
     try {
       await axios.post(
-        `https://movies-app-vkjw.onrender.com/adminNewRoom/${newRoom.branchId}`,
+        `${process.env.REACT_APP_SERVER}/adminNewRoom/${newRoom.branchId}`,
         {
           room_number: newRoom.roomNum,
           capacity: newRoom.roomCap,

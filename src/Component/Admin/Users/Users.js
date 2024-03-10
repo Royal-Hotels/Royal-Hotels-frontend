@@ -13,7 +13,7 @@ function Users() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://movies-app-vkjw.onrender.com/adminAllUsers"
+        `${process.env.REACT_APP_SERVER}/adminAllUsers`
       );
       setData(response.data);
       console.log(response.data);

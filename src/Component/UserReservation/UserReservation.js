@@ -18,7 +18,7 @@ function UserReservation() {
     const fetchData = async () => {
       try {
         const usersResponse = await fetch(
-          "https://movies-app-vkjw.onrender.com/adminAllUsers"
+          `${process.env.REACT_APP_SERVER}/adminAllUsers`
         );
         if (!usersResponse.ok) {
           throw new Error(`HTTP error! Status: ${usersResponse.status}`);
@@ -31,7 +31,7 @@ function UserReservation() {
         setUserData(user);
 
         const response = await fetch(
-          `https://movies-app-vkjw.onrender.com/usersRes/${user_id}`
+          `${process.env.REACT_APP_SERVER}/usersRes/${user_id}`
         );
 
         if (!response.ok) {
@@ -63,7 +63,7 @@ function UserReservation() {
       console.log("Request Payload:", JSON.stringify(requestBody));
 
       const response = await fetch(
-        `https://movies-app-vkjw.onrender.com/usersRes/${editingReservation.reservation_id}`,
+        `${process.env.REACT_APP_SERVER}/usersRes/${editingReservation.reservation_id}`,
         {
           method: "PUT",
           headers: {
@@ -114,7 +114,7 @@ function UserReservation() {
   const handleDelete = async (reservationId) => {
     try {
       const response = await fetch(
-        `https://movies-app-vkjw.onrender.com/usersRes/${user_id}/${reservationId}`,
+        `${process.env.REACT_APP_SERVER}/usersRes/${user_id}/${reservationId}`,
         {
           method: "DELETE",
         }
