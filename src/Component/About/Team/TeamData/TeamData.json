@@ -1,0 +1,39 @@
+{
+  "TeamMembers": [
+    {
+      "name": "Abdullah Qdad",
+      "Photo": "",
+      "Education": "Software Engineer",
+      "Interests": "football - video games",
+      "gitHubLink": "https://github.com/AbdullahKadad"
+    },
+    {
+      "name": "Raghad Al-katout",
+      "Photo": "",
+      "Education": "Software Engineer",
+      "Interests": "Horses - Designes - Sci-fi",
+      "gitHubLink": "https://github.com/Raghadkatout08"
+    },
+    {
+      "name": "Mohamed Yaman Katalan",
+      "Photo": "",
+      "Education": "Software Engineer",
+      "Interests": "Media Translation - Video Games",
+      "gitHubLink": "https://github.com/Yaman-Katalan"
+    },
+    {
+      "name": "Anas Moh Knbar",
+      "Photo": "",
+      "Education": "Software Engineer",
+      "Interests": "Database Design - React.js",
+      "gitHubLink": "https://github.com/Yaman-Katalan"
+    },
+    {
+      "name": "Balqees Hmoud",
+      "Photo": "",
+      "Education": "Software Engineer",
+      "Interests": "Database Design - React.js",
+      "gitHubLink": "https://github.com/balqeesHmoud"
+    }
+  ]
+}

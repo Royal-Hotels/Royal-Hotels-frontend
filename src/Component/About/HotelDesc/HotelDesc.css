@@ -1,0 +1,29 @@
+.hotel-text {
+  padding-top: 100px;
+}
+.hotel-text .container {
+  background-color: #f2f6fa;
+  border: 3px solid #feba02;
+  border-radius: 15px;
+  padding: 50px;
+}
+
+.hotel-text .container .image {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+.hotel-text .container .image img {
+  width: 250px;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.hotel-text .container p {
+  font-size: 30px;
+
+  /* font-family: "Caveat", cursive; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}

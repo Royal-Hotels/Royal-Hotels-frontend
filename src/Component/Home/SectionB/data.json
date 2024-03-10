@@ -1,0 +1,43 @@
+{
+    "rooms": [
+      {
+        "type": "Standard",
+        "photo": "/assets/imgs/royalRooms/2.jpg",
+        "info": "Discover comfort and convenience in our standard hotel rooms. Featuring plush bedding for a restful night's sleep."
+      },
+      {
+        "type": "Double",
+        "photo": "/assets/imgs/royalRooms/3.jpg",
+        "info": " Indulge in luxury and space with our duplex hotel rooms. Spread across two levels, these stylish accommodations offer the..."
+      },
+      {
+        "type": "Family",
+        "photo": "/assets/imgs/royalRooms/6.jpg",
+        "info": "Experience unparalleled luxury and sophistication in our triplex hotel rooms. Spread out across three levels, these opulent..."
+      },
+      {
+        "type": "Royal",
+        "photo": "/assets/imgs/royalRooms/5.jpg",
+        "info": "Step into luxury and elegance with our suite accommodations. Designed for discerning travelers, our suites offer spacious living..."
+      }
+      ,
+      {
+        "type": "Presidential Suite",
+        "photo": "/assets/imgs/royalRooms/6.jpg",
+        "info": "Welcome to our family-friendly accommodations, designed with your comfort and convenience in mind. Our spacious family rooms..."
+      }
+      ,
+      {
+        "type": "Deluxe ",
+        "photo": "/assets/imgs/royalRooms/2.jpg",
+        "info": "Welcome to our family-friendly accommodations, designed with your comfort and convenience in mind. Our spacious family rooms..."
+      }
+      ,
+      {
+        "type": "Duplex/Triplex",
+        "photo": "/assets/imgs/royalRooms/3.jpg",
+        "info": "Welcome to our family-friendly accommodations, designed with your comfort and convenience in mind. Our spacious family rooms..."
+      }
+    ]
+  }
+  

@@ -1,0 +1,141 @@
+/* .login-form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .success {
+    color: green;
+  }
+  
+
+  h1{
+    text-align: center;
+  } */
+
+.loginForm {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.loginForm h1 {
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.loginForm form {
+  width: fit-content;
+  margin: auto;
+}
+
+.loginForm form div:not(.button) {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loginForm form div:not(.button) input {
+  border-radius: 5px;
+  width: 300px;
+  height: 50px;
+  padding-left: 15px;
+  background-color: #eee;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid #003580;
+  transition: 0.3s;
+}
+
+.loginForm form div:not(.button) input:focus {
+  border-color: #009fe3;
+}
+
+.loginForm form div:not(.button) input::placeholder {
+  color: #666;
+  transition: 0.3s;
+}
+
+.loginForm form div:not(.button) input:focus::placeholder {
+  color: transparent;
+}
+
+.loginForm form div.button {
+  text-align: center;
+}
+
+.loginForm form div.button button {
+  font-family: "Comic Neue", cursive;
+  font-size: 20px;
+  border: none;
+  background-color: #feba02;
+  color: black;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.loginForm form div.button button:hover {
+  background-color: #d18700;
+  color: white;
+}
+
+.loginForm form div label {
+  margin-right: 30px;
+}
+
+@media (max-width: 767px) {
+  .loginForm form div label {
+    display: none;
+  }
+}
+
+.loginForm form a.register {
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+  text-decoration: none;
+  font-family: "Comic Neue", cursive;
+  font-size: 20px;
+  border: none;
+  background-color: #009fe3;
+  color: black;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.loginForm form a.register:hover {
+  color: white;
+  background-color: #0275a6;
+}

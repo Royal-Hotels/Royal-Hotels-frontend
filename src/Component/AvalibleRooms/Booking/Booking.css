@@ -1,0 +1,65 @@
+.bookingForm {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.bookingForm .container h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.bookingForm .container form {
+  text-align: center;
+  width: fit-content;
+  margin: 30px auto 0;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: #eee;
+  padding: 20px;
+}
+
+.bookingForm .container label {
+  margin-bottom: 20px;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bookingForm .container form button {
+  margin: 30px auto 0;
+  color: #fff;
+  padding: 10px 15px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #009fe3;
+}
+
+.bookingForm .container form button:hover {
+  background-color: #017aae;
+}
+
+.bookingForm .container form div.parent {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: fit-content;
+  text-align: left;
+  background-color: #f2f6fa;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.bookingForm .container form div.parent div {
+  padding: 5px 25px;
+}
+
+.bookingForm .container form div.parent div:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+}
+
+.bookingForm .container form div.parent input {
+  margin-right: 15px;
+}
